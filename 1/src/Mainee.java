@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class  Maine{
+public class  Mainee{
     public static void main (String args[])
     {
         DrawingBox drawingBox;
