@@ -7,12 +7,9 @@ public class Time {
     public Time ( int hour, int minute, int second)
     {
         list = new ArrayList<Time>();
-        if (hour<24)
-        this.hour = hour;
-        if (minute <60)
-        this.minute = minute;
-        if (minute<60)
-        this.second = second;
+        this.hour = hour%24;
+        this.minute = minute%60;
+        this.second = second%60;
     }
     public static void add( Time time)
     {

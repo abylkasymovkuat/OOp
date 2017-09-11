@@ -1,28 +1,20 @@
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.security.Key;
 import java.util.Scanner;
-
 public class Maine {
 
-
-    public static void main(String args[]) {
-        boolean stop = false;
+    public static void main(String[] args) {
+// TODO Auto-generated method stub 
         Data data = new Data();
-        Analyzer analyzer = new Analyzer(data);
-        Scanner scanner = new Scanner(System.in);
-
-        while (!stop) {
-
-            analyzer.setValues(scanner.nextDouble());
-            System.out.println(data.getAverage());
-            System.out.println(data.getMax());
-
+        Scanner scan = new Scanner(System.in);
+        while(true) {
+            String r = scan.nextLine();
+            if(r.equals("q"))
+            {
+                break;
+            }
+            double value = Double.parseDouble(r);
+            data.addValue(value);
         }
-
-
+        System.out.println(data.getAverage() + " "+ data.getMax());
 
     }
-
-
 }
