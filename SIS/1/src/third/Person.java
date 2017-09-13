@@ -7,17 +7,17 @@ public class Person {
     {
         switch (c){
             case 'B':
-                gender = Gender.B;
+                gender = Gender.Boy;
                 break;
             case 'G':
-                gender = Gender.G;
+                gender = Gender.Girl;
                 break;
 
 
         }
     }
-    public String toString()
+    public Character toChar()
     {
-       return String.valueOf(gender);
+       return this.gender.asChar();
     }
 }
