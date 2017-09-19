@@ -2,9 +2,8 @@ import java.util.Scanner;
 public class Maine {
 
     public static void main(String[] args) {
-// TODO Auto-generated method stub 
         Data data = new Data();
-        Scanner scan = new Scanner(System.in);
+        Scanner  scan = new Scanner(System.in);
         while(true) {
             String r = scan.nextLine();
             if(r.equals("q"))
