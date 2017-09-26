@@ -6,12 +6,13 @@ public class Cat extends  Animal {
        {
            super(numberOfLegs);
        }
-    public void roar() {
+    public void roar()
+    {
         System.out.print("Meow");
     }
-    public String roar(String sound)
+    public void roar(String sound)
     {
         this.sound = sound;
-        return this.sound;
+    System.out.print(sound);
     }
 }

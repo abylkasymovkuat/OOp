@@ -1,15 +1,14 @@
 package Task_5;
 
 public class Knight extends Piece {
-    public Knight(String curPosition) {
-        super(curPosition);
+    public Knight() {
+        super();
     }
 
     @Override
-    public boolean isLegalMove(String endPosition) {
-      setTempCell(endPosition);
-        int dx = Math.abs(x1 - x2);
-        int dy = Math.abs(y1 - y2);
+    public boolean isLegalMove(Position p1, Position p2) {
+        int dx = Math.abs(p1.getCharPos() - p1.getCharPos());
+        int dy = Math.abs(p2.getIntPos() - p2.getIntPos());
         if (dx * dy == 2) {
          return true;
         }

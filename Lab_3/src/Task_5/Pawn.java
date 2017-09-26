@@ -1,20 +1,24 @@
 package Task_5;
 
 public class Pawn extends  Piece {
-    public Pawn(String curPosition) {
-        super(curPosition);
+    public Pawn() {
+        super();
     }
 
     @Override
-    public boolean isLegalMove(String endPosition) {
-       setTempCell(endPosition);
-       if (y1 == '2'  && (y2-y1) == 2 || y1 !='2' && y2-y1 ==1)
+    public boolean isLegalMove(Position p1, Position p2) {
+
+        if (p1.getIntPos() ==2 && (p2.getIntPos()-p1.getIntPos()) == 2)
        {
+
            return true;
        }
-       else if ( y2-y1 == 1 && Math.abs(x2-x1) == 1) return true;
-       else return false;
+       else if ( (p1.getIntPos() >2 && p1.getIntPos()< 8 && p1.getIntPos() -p2.getIntPos()==1)){
+           return true;
+       }
+       else if ( p2.getIntPos() - p1.getIntPos()== 1 && Math.abs(p1.getCharPos()-p2.getCharPos()) == 1) return true;
 
+       else return false;
 
     }
 }

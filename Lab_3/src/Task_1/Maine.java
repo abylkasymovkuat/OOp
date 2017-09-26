@@ -8,7 +8,7 @@ public class Maine {
     Animal animal = new Animal();
     animal.roar();
     System.out.println();
-    System.out.print(cat.roar("Qua-qua "));
+    cat.roar();
     System.out.print(cat.getNumberOfLegs());
 
 }}

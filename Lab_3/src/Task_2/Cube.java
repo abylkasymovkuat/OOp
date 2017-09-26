@@ -2,18 +2,19 @@ package Task_2;
 
 public class Cube extends GeoObject
 {
-    public Cube(){};
-    public  Cube(double bottomValue, double height)
+    private double edge;
+    public Cube(){super();}
+    public  Cube(double edge)
     {
-        super(bottomValue, height);
+        this.edge = edge;
     }
 
     public double calcArea()
     {
-        return Math.pow(bottomValue, 2);
+        return Math.pow(edge, 2);
     }
     public double calcVolume()
     {
-        return calcArea()*height;
+        return calcArea()*edge;
     }
 }

@@ -21,7 +21,7 @@ public class Manager extends Employee
 
         public boolean equals(Person manager) {
             Manager manager1 = (Manager)manager;
-            return (super.equals(manager1) && this.employees.equals(manager1.employees))?true:false;
+            return (super.equals(manager1) && this.employees.equals(manager1.getEmployees()))?true:false;
         }
         public String toString(){
             String empl = "";
@@ -34,5 +34,9 @@ public class Manager extends Employee
         public void addEmployee(Employee employee)
         {
             employees.add(employee);
+        }
+
+        public Vector<Employee> getEmployees() {
+            return employees;
         }
     }

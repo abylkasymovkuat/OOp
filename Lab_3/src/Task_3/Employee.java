@@ -24,6 +24,18 @@ public class Employee extends Person
     public boolean equals(Person employee1)
         {
             Employee employee = (Employee) employee1;
-            return (this.salary == employee.salary && this.year == employee.year && super.equals(employee) && this.insuranceNumber.equals(employee.insuranceNumber))? true : false;
+            return (this.salary == employee.getSalary() && this.year == employee.getYear() && super.equals(employee) && this.insuranceNumber.equals(employee.getInsuranceNumber()))? true : false;
         }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getInsuranceNumber() {
+        return insuranceNumber;
+    }
 }

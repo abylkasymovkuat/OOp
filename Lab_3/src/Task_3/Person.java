@@ -14,7 +14,10 @@ public class Person {
     }
     public boolean equals(Person person)
     {
-        return (this.name.equals(person.name)) ? true : false;
+        return (this.name.equals(person.getName())) ? true : false;
     }
 
+    public String getName() {
+        return name;
+    }
 }
