@@ -11,10 +11,9 @@ public class Main {
         myVector.add(3);
         myVector.add(6);
         myVector.add(5);
-        myVector.add(6);
-        myVector.removeAt(1);
+        myVector.add(7);
         myVector.reverse();
-        myVector.removeAll(6);
-        System.out.print(myVector + " " + myVector.indexOf(2));
+
+        System.out.println(myVector);
     }
 }

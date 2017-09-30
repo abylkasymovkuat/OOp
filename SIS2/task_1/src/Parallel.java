@@ -1,6 +1,3 @@
-package Task_1;
-
-import Task_1.Circuit;
 
 public class Parallel extends Circuit {
     @Override

@@ -3,7 +3,11 @@ package Task_3;
 public class MyVector implements MyCollection {
     private int [] arr;
     private int [] arr1;
-    private int cnt;
+    private int size;
+
+    public int getSize() {
+        return arr.length;
+    }
 
     public int[] getArr() {
         return arr;
@@ -11,37 +15,33 @@ public class MyVector implements MyCollection {
 
     public MyVector()
     {
-        cnt = 0;
+        size = 0;
         arr = new int[0];
         arr1 = new int[0];
     }
     @Override
     public void add(int element) {
-
-        arr1 = new int[arr.length+1];
-        for (int i =0; i <arr.length; i++)
-        {
-            arr1[i] = arr[i];
-        }
-        arr1[arr.length] = element;
-        arr = new int[arr1.length];
-        arr = arr1.clone();
+        add(size, element);
     }
 
     @Override
     public void add(int index, int element) {
-        if (index >=arr.length){}
-       arr1 = new int[++cnt];
-       for ( int i =0; i < index;i++)
-       {
-           arr1[i] = arr[i];
-       }
-       arr1[index] = element;
-       for ( int i =element+1; i < cnt;i++)
+        if (index >arr.length || index <0){ return;}
+
+        arr1 = new int[size+1];
+
+        for ( int i =0; i < index;i++)
+        {
+            arr1[i] = arr[i];
+        }
+        arr1[index] = element;
+        for (int i = index+1; i < arr1.length; i++)
         {
             arr1[i] = arr[i-1];
         }
+        arr = new int[arr1.length];
         arr = arr1.clone();
+        size++;
     }
 
     @Override
@@ -56,10 +56,9 @@ public class MyVector implements MyCollection {
 
     @Override
     public void clear() {
-        for ( int i =0; i < cnt; i ++){
-            arr [i] = 0;
-        }
-        cnt = 0;
+      arr = new int[0];
+      arr1 = new int[0];
+        size = 0;
     }
 
     @Override
@@ -120,7 +119,7 @@ public class MyVector implements MyCollection {
 
     @Override
     public void insertElementAt(int element, int index) {
-
+        add(element, index);
     }
 
     @Override
@@ -134,16 +133,13 @@ public class MyVector implements MyCollection {
         for( int i = 0; i < index;i++)
         {
             arr1[i] = arr[i];
-            System.out.println(arr[i] + " " + arr1[i]);
-
         }
         for( int i = index; i < arr1.length;i++)
         {
             arr1[i] = arr[i+1];
-            System.out.println(arr[i] + " " + arr1[i]);
         }
         arr = new int[arr1.length];
-
+        arr = arr1.clone();
     }
 
     @Override
@@ -154,15 +150,15 @@ public class MyVector implements MyCollection {
 //        }
 //        arr = new int[arr1.length];
 //        arr = arr1.clone();
-        removeAt(this.indexOf(element));
+
+            removeAt(this.indexOf(element));
 
     }
 
     @Override
     public void removeAll(int element) {
-        for ( int i =0; i < arr.length; i++)
-        {
-            removeAt(this.indexOf(element));
+        while (indexOf(element) !=-1){
+            removeAt(indexOf(element));
         }
     }
 }
